@@ -15,13 +15,12 @@
 }
 
 body {
-  background: url('bg.jpg') center/cover no-repeat fixed;
-  background-color: #171a1f; /* Цвет на случай, если картинка не загрузится */
-  min-height: 100dvh; /* dvh решает проблему с нижним баром браузера на телефонах! */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow-x: hidden;
+  background-color: #212529; /* Изменено на темно-серый цвет */
+  display: flex; /* */
+  justify-content: center; /* */
+  align-items: center; /* */
+  min-height: 100vh; /* */
+  padding: 20px; /* */
 }
 
 .main-wrapper {
@@ -157,3 +156,4 @@ body {
     padding: 12px 20px;
   }
 }
+
