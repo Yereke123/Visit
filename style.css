@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-  --orlik-copper: #c76d29; /* Тот самый премиальный медно-оранжевый цвет с макета */
+  --orlik-copper: #c76d29;
   --text-white: #ffffff;
   --text-gray: #d1d5db;
 }
@@ -15,45 +15,41 @@
 }
 
 body {
-  /* Ваша картинка на заднем фоне */
   background: url('bg.jpg') center/cover no-repeat fixed;
-  
-  min-height: 100vh;
+  background-color: #171a1f; /* Цвет на случай, если картинка не загрузится */
+  min-height: 100dvh; /* dvh решает проблему с нижним баром браузера на телефонах! */
   display: flex;
   flex-direction: column;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* Обертка для центрирования карточки (оставляем место для нижнего бара) */
 .main-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  padding-bottom: 80px; /* Отступ чтобы футер не перекрывал карточку */
+  padding: 15px;
+  padding-bottom: 85px; /* Чтобы карточка не залезла под футер */
 }
 
-/* Стеклянная карточка */
 .glass-card {
   width: 100%;
   max-width: 340px;
-  background: rgba(255, 255, 255, 0.12); /* Полупрозрачность */
-  backdrop-filter: blur(25px); /* Сильное размытие заднего фона */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Тонкая белая рамка-блик */
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
-  padding: 35px 25px;
+  padding: 30px 20px;
   text-align: center;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Фото профиля */
 .avatar-wrapper {
-  width: 90px;
-  height: 90px;
-  margin: 0 auto 15px;
+  width: 85px;
+  height: 85px;
+  margin: 0 auto 12px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
@@ -65,14 +61,21 @@ body {
   object-fit: cover;
 }
 
-/* Текстовый блок (Имя и должность) */
 .brand-text {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+}
+
+/* НОВЫЕ СТИЛИ ДЛЯ ИМЕНИ И ФАМИЛИИ */
+.brand-text h2 {
+  color: var(--text-white);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 2px;
 }
 
 .brand-text h1 {
   color: var(--text-white);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 5px;
@@ -86,14 +89,12 @@ body {
   text-transform: uppercase;
 }
 
-/* Группа кнопок */
 .button-group {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-/* Кнопки-таблетки */
 .pill-btn {
   display: block;
   width: 100%;
@@ -101,7 +102,7 @@ body {
   color: var(--text-white);
   text-decoration: none;
   padding: 14px 20px;
-  border-radius: 50px; /* Делает края абсолютно круглыми */
+  border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 600;
   transition: transform 0.2s, background-color 0.2s;
@@ -113,9 +114,8 @@ body {
   transform: scale(0.97);
 }
 
-/* Нижний оранжевый бар (Футер) */
 .bottom-bar {
-  position: absolute;
+  position: fixed; /* Жестко фиксируем внизу экрана! */
   bottom: 0;
   left: 0;
   width: 100%;
@@ -128,6 +128,7 @@ body {
   align-items: center;
   gap: 35px;
   box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+  z-index: 100;
 }
 
 .bottom-bar a {
@@ -137,7 +138,22 @@ body {
   transition: transform 0.2s;
 }
 
-.bottom-bar a:hover {
-  transform: translateY(-3px) scale(1.1);
+/* ДОПОЛНИТЕЛЬНАЯ АДАПТАЦИЯ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ */
+@media (max-height: 700px) {
+  .glass-card {
+    padding: 20px 15px;
+  }
+  .avatar-wrapper {
+    width: 75px;
+    height: 75px;
+  }
+  .brand-text h2 {
+    font-size: 1.05rem;
+  }
+  .brand-text h1 {
+    font-size: 1.4rem;
+  }
+  .pill-btn {
+    padding: 12px 20px;
+  }
 }
-
