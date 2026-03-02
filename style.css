@@ -16,7 +16,7 @@
 
 body {
   /* Ваша картинка на заднем фоне */
-  background: url('images/bg.jpg') center/cover no-repeat fixed;
+  background: url('bg.jpg') center/cover no-repeat fixed;
   
   min-height: 100vh;
   display: flex;
@@ -140,3 +140,4 @@ body {
 .bottom-bar a:hover {
   transform: translateY(-3px) scale(1.1);
 }
+
