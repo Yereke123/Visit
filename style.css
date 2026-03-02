@@ -15,12 +15,13 @@
 }
 
 body {
-  background-color: #e3f1ff; /* Изменено на темно-серый цвет */
-  display: flex; /* */
-  justify-content: center; /* */
-  align-items: center; /* */
-  min-height: 100vh; /* */
-  padding: 20px; /* */
+  /* Ваша картинка на заднем фоне */
+  background: url('bh.jpg') center/cover no-repeat fixed;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-wrapper {
@@ -156,5 +157,6 @@ body {
     padding: 12px 20px;
   }
 }
+
 
 
