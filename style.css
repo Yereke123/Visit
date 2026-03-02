@@ -70,7 +70,13 @@ body {
 .brand-text {
   margin-bottom: 25px;
 }
-
+/* Добавьте это, чтобы имя было белым */
+#personName {
+  color: var(--text-white); /* Или просто color: white; */
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
 .brand-text h1 {
   color: var(--text-white);
   font-size: 1.5rem;
@@ -140,4 +146,5 @@ body {
 .bottom-bar a:hover {
   transform: translateY(-5px) scale(1.1);
 }
+
 
