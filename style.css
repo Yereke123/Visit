@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: #212529; /* Изменено на темно-серый цвет */
+  background-color: #e3f1ff; /* Изменено на темно-серый цвет */
   display: flex; /* */
   justify-content: center; /* */
   align-items: center; /* */
@@ -156,4 +156,5 @@ body {
     padding: 12px 20px;
   }
 }
+
 
