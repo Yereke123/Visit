@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --orlik-copper: #c76d29; /* Тот самый премиальный медно-оранжевый цвет с макета */
+  --text-white: #ffffff;
+  --text-gray: #d1d5db;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  /* Ваша картинка на заднем фоне */
+  background: url('images/bg.jpg') center/cover no-repeat fixed;
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Обертка для центрирования карточки (оставляем место для нижнего бара) */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 80px; /* Отступ чтобы футер не перекрывал карточку */
+}
+
+/* Стеклянная карточка */
+.glass-card {
+  width: 100%;
+  max-width: 340px;
+  background: rgba(255, 255, 255, 0.12); /* Полупрозрачность */
+  backdrop-filter: blur(25px); /* Сильное размытие заднего фона */
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Тонкая белая рамка-блик */
+  border-radius: 24px;
+  padding: 35px 25px;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Фото профиля */
+.avatar-wrapper {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Текстовый блок (Имя и должность) */
+.brand-text {
+  margin-bottom: 25px;
+}
+
+.brand-text h1 {
+  color: var(--text-white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.brand-text p {
+  color: var(--text-gray);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Группа кнопок */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Кнопки-таблетки */
+.pill-btn {
+  display: block;
+  width: 100%;
+  background-color: var(--orlik-copper);
+  color: var(--text-white);
+  text-decoration: none;
+  padding: 14px 20px;
+  border-radius: 50px; /* Делает края абсолютно круглыми */
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 15px rgba(199, 109, 41, 0.3);
+}
+
+.pill-btn:hover, .pill-btn:active {
+  background-color: #b35e20;
+  transform: scale(0.97);
+}
+
+/* Нижний оранжевый бар (Футер) */
+.bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--orlik-copper);
+  height: 70px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
+}
+
+.bottom-bar a {
+  color: var(--text-white);
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.bottom-bar a:hover {
+  transform: translateY(-3px) scale(1.1);
+}
