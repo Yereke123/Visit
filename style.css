@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 :root {
-  --orlik-copper: #c76d29;
+  --orlik-copper: #c76d29; /* Тот самый премиальный медно-оранжевый цвет */
   --text-white: #ffffff;
   --text-gray: #d1d5db;
 }
@@ -15,8 +15,9 @@
 }
 
 body {
-  /* Ваша картинка на заднем фоне */
-  background: url('bh.jpg') center/cover no-repeat fixed;
+  /* Задний фон оставляем без изменений, как вы просили */
+  background: url('images/bg.jpg') center/cover no-repeat fixed;
+  
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +25,17 @@ body {
   overflow: hidden;
 }
 
+/* Обертка для центрирования карточки */
 .main-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
-  padding-bottom: 85px; /* Чтобы карточка не залезла под футер */
+  padding: 20px;
+  padding-bottom: 100px; /* Увеличил отступ, так как футер стал выше */
 }
 
+/* Стеклянная карточка */
 .glass-card {
   width: 100%;
   max-width: 340px;
@@ -41,18 +44,20 @@ body {
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
-  padding: 30px 20px;
+  padding: 35px 25px;
   text-align: center;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
+/* ФОТО УВЕЛИЧЕНО */
 .avatar-wrapper {
-  width: 85px;
-  height: 85px;
-  margin: 0 auto 12px;
+  width: 130px; /* Было 90px */
+  height: 130px; /* Было 90px */
+  margin: 0 auto 15px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Добавил легкую рамку для акцента */
 }
 
 .avatar-wrapper img {
@@ -61,21 +66,14 @@ body {
   object-fit: cover;
 }
 
+/* Текстовый блок */
 .brand-text {
-  margin-bottom: 20px;
-}
-
-/* НОВЫЕ СТИЛИ ДЛЯ ИМЕНИ И ФАМИЛИИ */
-.brand-text h2 {
-  color: var(--text-white);
-  font-size: 1.15rem;
-  font-weight: 600;
-  margin-bottom: 2px;
+  margin-bottom: 25px;
 }
 
 .brand-text h1 {
   color: var(--text-white);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
   margin-bottom: 5px;
@@ -89,6 +87,7 @@ body {
   text-transform: uppercase;
 }
 
+/* Группа кнопок */
 .button-group {
   display: flex;
   flex-direction: column;
@@ -114,49 +113,30 @@ body {
   transform: scale(0.97);
 }
 
+/* НИЖНИЙ БАР И КНОПКИ УВЕЛИЧЕНЫ */
 .bottom-bar {
-  position: fixed; /* Жестко фиксируем внизу экрана! */
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   background-color: var(--orlik-copper);
-  height: 70px;
+  height: 85px; /* Увеличил высоту бара с 70px */
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 35px;
+  gap: 45px; /* Увеличил расстояние между кнопками */
   box-shadow: 0 -5px 20px rgba(0,0,0,0.3);
-  z-index: 100;
 }
 
 .bottom-bar a {
   color: var(--text-white);
-  font-size: 1.4rem;
+  font-size: 2.2rem; /* Увеличил иконки с 1.4rem */
   text-decoration: none;
   transition: transform 0.2s;
 }
 
-/* ДОПОЛНИТЕЛЬНАЯ АДАПТАЦИЯ ДЛЯ МАЛЕНЬКИХ ТЕЛЕФОНОВ */
-@media (max-height: 700px) {
-  .glass-card {
-    padding: 20px 15px;
-  }
-  .avatar-wrapper {
-    width: 75px;
-    height: 75px;
-  }
-  .brand-text h2 {
-    font-size: 1.05rem;
-  }
-  .brand-text h1 {
-    font-size: 1.4rem;
-  }
-  .pill-btn {
-    padding: 12px 20px;
-  }
+.bottom-bar a:hover {
+  transform: translateY(-5px) scale(1.1);
 }
-
-
-
