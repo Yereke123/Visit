@@ -15,7 +15,7 @@
 }
 
 body {
-  background: url('images/bg.jpg') center/cover no-repeat fixed;
+  background: url('bh.jpg') center/cover no-repeat fixed;
   background-color: #171a1f;
   min-height: 100dvh;
   display: flex;
@@ -147,3 +147,4 @@ body {
   font-weight: 500;
   color: var(--text-gray);
 }
+
