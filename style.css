@@ -48,15 +48,15 @@ body {
 }
 
 .avatar-wrapper {
-  width: 130px; /* Сохраняем ширину */
-  height: 130px; /* Сохраняем высоту */
-  margin: 0 auto 15px; /* */
-  overflow: hidden; /* */
-  box-shadow: 0 8px 15px rgba(0,0,0,0.4); /* */
-  border: 3px solid var(--orlik-copper); /* */
+  width: 130px; /* Размер фото */
+  height: 130px;
+  margin: 0 auto 15px;
+  overflow: hidden;
+  border: 3px solid var(--orlik-copper); /* Оранжевая рамка */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
 
-  /* ИЗМЕНЕНО: border-radius: 0 для квадратных углов */
-  border-radius: 0; 
+  /* ИЗМЕНЕНО: Скругление как у карточки, но чуть меньше для гармонии */
+  border-radius: 20px; 
 }
 
 .avatar-wrapper img {
@@ -149,5 +149,6 @@ body {
   font-weight: 500;
   color: var(--text-gray);
 }
+
 
 
