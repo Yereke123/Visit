@@ -57,6 +57,8 @@ body {
 
   /* ИЗМЕНЕНО: Скругление как у карточки, но чуть меньше для гармонии */
   border-radius: 20px; 
+  /* СДВИГ ВПРАВО: меняйте 4px, если нужно больше или меньше */
+  transform: translateX(4px);
 }
 
 .avatar-wrapper img {
@@ -149,6 +151,7 @@ body {
   font-weight: 500;
   color: var(--text-gray);
 }
+
 
 
 
