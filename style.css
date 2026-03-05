@@ -17,11 +17,12 @@
 body {
   background: url('images/bg.jpg') center/cover no-repeat fixed;
   background-color: #171a1f;
-  /* Используем dvh для идеальной высоты на мобильных */
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   position: relative;
+  /* Разрешаем вертикальную прокрутку, если карточка не влезает */
+  overflow-y: auto; 
   overflow-x: hidden;
 }
 
@@ -30,7 +31,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 20px;
 }
 
 .glass-card {
@@ -46,10 +47,9 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* ФОТО УВЕЛИЧЕНО */
 .avatar-wrapper {
-  width: 120px;
-  height: 120px;
+  width: 130px; /* Увеличенный размер фото */
+  height: 130px;
   margin: 0 auto 15px;
   border-radius: 50%;
   overflow: hidden;
@@ -67,7 +67,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* ИМЯ ТЕПЕРЬ БЕЛОЕ */
+/* ИМЯ СДЕЛАНО БЕЛЫМ */
 #personName {
   color: var(--text-white);
   font-size: 1.1rem;
@@ -115,7 +115,11 @@ body {
   transition: 0.3s;
 }
 
-/* БЛОК СОЦИАЛЬНЫХ СЕТЕЙ ВНУТРИ КАРТОЧКИ */
+.pill-btn:active {
+  transform: scale(0.97);
+  background-color: #b35e20;
+}
+
 .card-social {
   display: flex;
   justify-content: space-around;
@@ -130,12 +134,11 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  transition: 0.3s;
   flex: 1;
 }
 
 .social-item i {
-  font-size: 2rem; /* КРУПНЫЕ ИКОНКИ */
+  font-size: 2.2rem; /* КРУПНЫЕ ИКОНКИ */
   color: var(--orlik-copper);
 }
 
@@ -143,17 +146,4 @@ body {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-gray);
-}
-
-.social-item:active {
-  transform: scale(0.9);
-}
-
-/* АДАПТАЦИЯ ПОД МАЛЕНЬКИЕ ЭКРАНЫ */
-@media (max-height: 660px) {
-  .glass-card { padding: 20px 15px; }
-  .avatar-wrapper { width: 100px; height: 100px; }
-  .brand-text h1 { font-size: 1.5rem; }
-  .button-group { margin-bottom: 15px; }
-  .pill-btn { padding: 12px; }
 }
